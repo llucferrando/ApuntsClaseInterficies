@@ -19,22 +19,12 @@ import androidx.core.widget.doBeforeTextChanged
 import com.example.apuntsclase.ui.theme.ApuntsClaseTheme
 
 class MainActivity : ComponentActivity() {
-    var counter = 0;
 
-    val text: TextView by lazy { findViewById(R.id.start_screen_text) }
-    val button: TextView by lazy { findViewById(R.id.start_screen_button) }
-    val editText: TextView by lazy { findViewById(R.id.edit_text) }
+
 
     override fun onCreate(savedInstanceState: Bundle?){
         super.onCreate(savedInstanceState)
         setContentView(R.layout.start_screen)
-
-
-
-        button.setOnClickListener{
-            counter++
-            text.text = counter.toString()
-        }
 
 
     }
