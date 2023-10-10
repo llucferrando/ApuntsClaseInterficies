@@ -22,12 +22,11 @@ import com.example.apuntsclase.ui.theme.ApuntsClaseTheme
 class MainActivity : ComponentActivity() {
 
 
-
+val reuslt: TextView by lazy { findViewById(R.id.result) }
     override fun onCreate(savedInstanceState: Bundle?){
         super.onCreate(savedInstanceState)
         setContentView(R.layout.start_screen)
-        //Referenciar per codi
-        val color= getColor(R.color.Primary)
+
 
 
     }
