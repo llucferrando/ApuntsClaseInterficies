@@ -17,8 +17,11 @@ class MainActivity : ComponentActivity() {
 
         changeScreenBt.setOnClickListener{
             val newIntent = Intent(this, SecondScreen::class.java)
-            this.startActivity(newIntent)
 
+            newIntent.putExtra("Texto","hola")
+
+            this.startActivity(newIntent)
+            overridePendingTransition(R.anim.enter_from_right,R.anim.exit_to_left)
         }
     }
 }
