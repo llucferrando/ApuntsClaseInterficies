@@ -1,4 +1,4 @@
-package com.example.apuntsclase.ui.theme.Utils
+package com.example.apuntsclase.Utils
 
 import android.content.Context
 import android.content.SharedPreferences
@@ -12,7 +12,7 @@ object SharedPreferencesManager {
 
     private val shared: SharedPreferences by lazy{ MyApp.Context.getSharedPreferences(
         MyPreferencesName, Context.MODE_PRIVATE)}
-    private val editor: SharedPreferences.Editor by lazy{shared.edit()}
+    private val editor: SharedPreferences.Editor by lazy{ shared.edit()}
 
     private  const val  TimesOpenAppKey = "AppOpenTimes"
     public var TimeOpenApp: Int

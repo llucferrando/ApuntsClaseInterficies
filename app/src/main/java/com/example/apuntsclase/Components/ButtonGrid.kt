@@ -1,8 +1,9 @@
-package com.example.apuntsclase;
+package com.example.apuntsclase.Components;
 
 import android.content.Context
 import android.widget.Button
 import android.widget.LinearLayout;
+import com.example.apuntsclase.R
 
 public class ButtonGrid(val context: Context, val parent: LinearLayout) {
     class ButtonsRow (val context: Context,val parent: LinearLayout){
