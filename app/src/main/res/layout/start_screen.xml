@@ -6,7 +6,7 @@
     >
 
     <TextView
-        android:id="@+id/result"
+        android:id="@+id/open_app_times_text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="0"
