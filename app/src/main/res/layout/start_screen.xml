@@ -5,13 +5,10 @@
     android:orientation="vertical"
     >
 
- <Button
-    android:id="@+id/change_screen_bt"
-     android:layout_width="wrap_content"
-     android:layout_height="wrap_content"
-    android:text="@string/next_screen_bt"
-  >
-
- </Button>
+<androidx.recyclerview.widget.RecyclerView
+    android:id="@+id/My_heros_app"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+/>
 
 </LinearLayout>
