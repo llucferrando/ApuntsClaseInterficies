@@ -1,18 +1,20 @@
 package com.example.apuntsclase.Screens
 
-import android.content.Intent
 import android.os.Bundle
-import android.widget.Button
-import android.widget.LinearLayout
-import android.widget.TextView
 import androidx.activity.ComponentActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.apuntsclase.Heroes.HeroAdapter
 import com.example.apuntsclase.Heroes.HeroData
-import com.example.apuntsclase.Heroes.HeroRepository
+import com.example.apuntsclase.Heroes.HeroProvider
+import com.example.apuntsclase.Heroes.Repositories.HeroApiService
+import com.example.apuntsclase.Heroes.Repositories.HeroMockRepository
+import com.example.apuntsclase.Heroes.Repositories.HeroSharedDataBase
 import com.example.apuntsclase.R
 import com.example.apuntsclase.Utils.Shared
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 
 class MainActivity : ComponentActivity() {
     val table by lazy{findViewById<RecyclerView>(R.id.My_heros_app)}
@@ -23,11 +25,18 @@ class MainActivity : ComponentActivity() {
         table.layoutManager = LinearLayoutManager(this)
 
 
+        val repository = HeroApiService()
 
 
+        val provider = HeroProvider(repository)
 
 
-        table.adapter = HeroAdapter(HeroRepository.GetAllHeroes())
+        CoroutineScope(Dispatchers.IO).launch {
+            val heroes = provider.GetAllHeroes()
+            CoroutineScope(Dispatchers.Main).launch {
+                table.adapter = HeroAdapter(heroes)
+            }
+        }
     }
 }
 
